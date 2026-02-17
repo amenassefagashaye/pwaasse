@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>መርከብ ቢንጎ ጨዋታ · Kartela · IDG</title>
+    
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0a0f1e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="መርከብ ቢንጎ">
+    <meta name="description" content="Traditional Ethiopian Bingo Game - መርከብ ቢንጎ ጨዋታ by Insite Digital Group">
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="icons/icon-152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/icon-180.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="icons/icon-167.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+</head>
+<body>
+    <main class="main-content">
+        <!-- SELECTION SECTION -->
+        <section class="selection-section" id="selectionSection">
+            <div class="selection-container">
+                <div class="selection-header">🔍</div>
+                <div class="search-row">
+                    <input type="number" id="boardSearchInput" class="search-input" min="1" max="300" placeholder="1–300" inputmode="numeric">
+                    <button class="add-btn" id="addBoardBtn" disabled aria-label="Add board">+</button>
+                </div>
+                <div id="searchMessage"></div>
+                <div class="selected-chips" id="selectedChipsContainer"></div>
+                <div class="selection-actions">
+                    <button class="selection-btn ok" id="okBtn" aria-label="Confirm">✓</button>
+                    <button class="selection-btn cancel" id="cancelBtn" aria-label="Cancel">✗</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- BINGO DISPLAY SECTION -->
+        <section class="bingo-section" id="bingoSection">
+            <div class="boards-container" id="boardsContainer"></div>
+        </section>
+
+        <!-- NO BOARDS SECTION -->
+        <div class="no-boards-section" id="noBoardsSection">
+            <div class="no-boards-content">
+                <div class="no-boards-mini-header">
+                    <button class="no-boards-mini-btn" id="noBoardsSelectBtn" title="Select boards" aria-label="Select boards">📋</button>
+                    <span class="no-boards-title">መርከብ ቢንጎ ጨዋታ</span>
+                    <button class="no-boards-mini-btn" id="noBoardsInfoBtn" title="About IDG" aria-label="About">ℹ️</button>
+                </div>
+                <div class="no-boards-icon">🎲</div>
+                <p style="font-size:1.6rem; font-weight:600;" id="noBoardsStatus">No boards selected</p>
+                <p class="no-boards-hint">Tap 📋 to select boards (1–300)</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer" id="footer">
+        <p>BY: IDG · 0951345346 · Ethiopia</p>
+    </footer>
+
+    <!-- INFO MODAL -->
+    <div class="info-modal" id="infoModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="info-modal-content">
+            <div class="info-modal-header">
+                <span class="info-modal-title" id="modalTitle">📌 Insite Digital Group</span>
+                <button class="close-info-modal" id="closeInfoModal" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="info-section">
+                <h3>Who We Are</h3>
+                <p>Insite Digital Group is a digital solutions company dedicated to creating innovative technology products and services that solve real-world problems.</p>
+            </div>
+            <div class="info-section">
+                <h3>Ownership & Leadership</h3>
+                <p>Owned by the Unique Familie network, introduced and managed by <strong>Assefa Gashaye</strong>.</p>
+            </div>
+            <div class="info-section">
+                <h3>Mission & Goal</h3>
+                <p>Provide digital solutions for every problem — regardless of location, age, or background.</p>
+            </div>
+            <div class="info-section">
+                <h3>🌍 Impact Statement</h3>
+                <p>✔ increased productivity<br>✔ improved communication<br>✔ smarter decision-making<br>✔ enhanced quality of life</p>
+            </div>
+            <div class="info-section">
+                <h3>📞 Contact</h3>
+                <p class="contact-item">📧 <a href="mailto:assefacn@gmail.com">assefacn@gmail.com</a></p>
+                <p class="contact-item">📱 +251 918 203 416</p>
+                <p class="contact-item">📲 <a href="https://t.me/GOGSmore" target="_blank" rel="noopener">t.me/GOGSmore</a></p>
+            </div>
+            <div class="footer-note">Insite Digital Group © 2026, Ethiopia</div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
